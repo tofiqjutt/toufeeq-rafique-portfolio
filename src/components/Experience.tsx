@@ -1,0 +1,125 @@
+import { experienceList } from '../data/portfolioData';
+import { 
+  Briefcase, 
+  Calendar, 
+  CheckCircle, 
+  TrendingUp,
+  Building
+} from 'lucide-react';
+
+export const Experience = () => {
+  return (
+    <section id="experience" className="experience-section">
+      <div className="container">
+        <div className="section-header">
+          <div className="section-tag">
+            <Briefcase size={14} />
+            <span>Career Evolution</span>
+          </div>
+          <h2 className="section-title">8+ Years Professional Experience</h2>
+          <p className="section-subtitle">
+            A consistent trajectory from foundational .NET engineering into complex APIs, financial platforms, high-stakes third-party integrations, and 24/7 production support.
+          </p>
+        </div>
+
+        {/* Narrative Progression Ribbon */}
+        <div style={{
+          maxWidth: '900px',
+          margin: '0 auto 48px auto',
+          background: 'rgba(15, 23, 42, 0.7)',
+          border: '1px solid rgba(56, 189, 248, 0.2)',
+          borderRadius: '12px',
+          padding: '20px 24px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '16px',
+          flexWrap: 'wrap'
+        }}>
+          <TrendingUp size={24} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
+          <div style={{ fontSize: '0.9rem', color: '#cbd5e1', lineHeight: '1.6' }}>
+            <strong style={{ color: '#ffffff' }}>The Engineering Trajectory:</strong> Started as a .NET developer building desktop & web apps → mastered relational databases & stored procedures → transitioned into secure APIs & third-party integrations → specialized in financial platforms & middleware → now delivers senior-level backend architecture, deployments, and production support.
+          </div>
+        </div>
+
+        {/* Vertical Timeline */}
+        <div className="timeline-container">
+          <div className="timeline-line"></div>
+
+          {experienceList.map((exp) => (
+            <div key={exp.id} className="timeline-item">
+              <div className="timeline-dot"></div>
+
+              <div className="timeline-content-card">
+                <div className="timeline-card-header">
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                      <Building size={16} color="var(--accent-cyan)" />
+                      <h3 className="timeline-company">{exp.company}</h3>
+                      {exp.isCurrent && (
+                        <span style={{
+                          background: 'rgba(16, 185, 129, 0.15)',
+                          color: '#34d399',
+                          fontSize: '0.72rem',
+                          fontFamily: 'var(--font-mono)',
+                          padding: '2px 8px',
+                          borderRadius: '4px',
+                          border: '1px solid rgba(16, 185, 129, 0.3)'
+                        }}>
+                          Current
+                        </span>
+                      )}
+                    </div>
+                    <div className="timeline-role">{exp.role}</div>
+                  </div>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span className="timeline-duration-badge">
+                      <Calendar size={13} style={{ display: 'inline', marginRight: '5px' }} />
+                      {exp.duration}
+                    </span>
+                  </div>
+                </div>
+
+                <p className="timeline-desc">{exp.description}</p>
+
+                <div style={{ marginBottom: '20px' }}>
+                  <div style={{ 
+                    fontSize: '0.8rem', 
+                    fontFamily: 'var(--font-mono)', 
+                    color: 'var(--text-muted)', 
+                    marginBottom: '10px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em'
+                  }}>
+                    Key Highlights & Responsibilities
+                  </div>
+                  <div className="responsibilities-grid">
+                    {exp.highlights.map((h, hIdx) => (
+                      <div key={hIdx} className="responsibility-item">
+                        <CheckCircle size={15} />
+                        <span>{h}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '8px', fontFamily: 'var(--font-mono)' }}>
+                    Core Technologies
+                  </div>
+                  <div className="tech-badges-wrap">
+                    {exp.technologies.map((t, tIdx) => (
+                      <span key={tIdx} className="tech-badge">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
