@@ -3,7 +3,6 @@ import {
   Briefcase, 
   Calendar, 
   CheckCircle, 
-  TrendingUp,
   Building
 } from 'lucide-react';
 
@@ -20,25 +19,6 @@ export const Experience = () => {
           <p className="section-subtitle">
             A consistent trajectory from foundational .NET engineering into complex APIs, financial platforms, high-stakes third-party integrations, and 24/7 production support.
           </p>
-        </div>
-
-        {/* Narrative Progression Ribbon */}
-        <div style={{
-          maxWidth: '900px',
-          margin: '0 auto 48px auto',
-          background: 'rgba(15, 23, 42, 0.7)',
-          border: '1px solid rgba(56, 189, 248, 0.2)',
-          borderRadius: '12px',
-          padding: '20px 24px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '16px',
-          flexWrap: 'wrap'
-        }}>
-          <TrendingUp size={24} color="var(--accent-cyan)" style={{ flexShrink: 0 }} />
-          <div style={{ fontSize: '0.9rem', color: '#cbd5e1', lineHeight: '1.6' }}>
-            <strong style={{ color: '#ffffff' }}>The Engineering Trajectory:</strong> Started as a .NET developer building desktop & web apps → mastered relational databases & stored procedures → transitioned into secure APIs & third-party integrations → specialized in financial platforms & middleware → now delivers senior-level backend architecture, deployments, and production support.
-          </div>
         </div>
 
         {/* Vertical Timeline */}

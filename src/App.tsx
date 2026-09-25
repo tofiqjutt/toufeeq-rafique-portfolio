@@ -7,7 +7,6 @@ import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
 import { Skills } from './components/Skills';
 import { WhatIDo } from './components/WhatIDo';
-import { EngineeringApproach } from './components/EngineeringApproach';
 import { Education } from './components/Education';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -27,7 +26,6 @@ export function App() {
         <Experience />
         <Skills />
         <WhatIDo />
-        <EngineeringApproach />
         <Education />
         <Contact />
       </main>

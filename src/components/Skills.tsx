@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { skillGroups } from '../data/portfolioData';
 import { 
   Cpu, 
@@ -8,13 +7,10 @@ import {
   Monitor, 
   Database, 
   Network, 
-  Wrench, 
-  Search
+  Wrench
 } from 'lucide-react';
 
 export const Skills = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
       case 'Code': return <Code size={20} />;
@@ -27,14 +23,6 @@ export const Skills = () => {
       default: return <Cpu size={20} />;
     }
   };
-
-  const filteredGroups = skillGroups.map(group => ({
-    ...group,
-    skills: group.skills.filter(s => 
-      s.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      group.category.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-  })).filter(group => group.skills.length > 0);
 
   return (
     <section id="skills" className="skills-section">
@@ -50,50 +38,9 @@ export const Skills = () => {
           </p>
         </div>
 
-        {/* Quick Filter / Search input */}
-        <div style={{ maxWidth: '480px', margin: '0 auto 40px auto', position: 'relative' }}>
-          <Search 
-            size={18} 
-            style={{ 
-              position: 'absolute', 
-              left: '16px', 
-              top: '50%', 
-              transform: 'translateY(-50%)', 
-              color: 'var(--text-muted)' 
-            }} 
-          />
-          <input
-            type="text"
-            placeholder="Search technology (e.g. C#, ASP.NET Core, SQL Server, JWT)..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="form-input"
-            style={{ paddingLeft: '44px', borderRadius: '9999px' }}
-          />
-          {searchTerm && (
-            <button
-              onClick={() => setSearchTerm('')}
-              style={{
-                position: 'absolute',
-                right: '16px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                background: 'transparent',
-                border: 'none',
-                color: 'var(--text-muted)',
-                cursor: 'pointer',
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.8rem'
-              }}
-            >
-              Clear
-            </button>
-          )}
-        </div>
-
         {/* Categorized Skills Grid */}
         <div className="skills-grid">
-          {filteredGroups.map((group, idx) => (
+          {skillGroups.map((group, idx) => (
             <div key={idx} className="skill-category-card">
               <div className="skill-category-header">
                 <div className="skill-cat-icon">

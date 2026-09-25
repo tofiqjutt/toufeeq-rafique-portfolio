@@ -21,7 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
 
-      const sections = ['hero', 'about', 'current-role', 'projects', 'experience', 'skills', 'what-i-do', 'approach', 'contact'];
+      const sections = ['hero', 'about', 'current-role', 'projects', 'experience', 'skills', 'what-i-do', 'contact'];
       const scrollPos = window.scrollY + 120;
 
       for (const sectionId of sections) {
@@ -54,9 +54,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container navbar-container">
           <div className="nav-brand" style={{ cursor: 'pointer' }} onClick={() => scrollToSection('hero')}>
-            <div className="brand-monogram">
-              <span>MTR</span>
-            </div>
+            <img src="/toufeeq.png" alt="Muhammad Toufeeq Rafique" className="brand-avatar-img" />
             <div className="brand-info">
               <span className="brand-name">{personalInfo.name}</span>
               <span className="brand-role">Senior .NET / Full Stack Developer</span>
@@ -116,15 +114,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
                 onClick={(e) => { e.preventDefault(); scrollToSection('what-i-do'); }}
               >
                 What I Do
-              </a>
-            </li>
-            <li>
-              <a
-                href="#approach"
-                className={`nav-link ${activeSection === 'approach' ? 'active' : ''}`}
-                onClick={(e) => { e.preventDefault(); scrollToSection('approach'); }}
-              >
-                Approach
               </a>
             </li>
             <li>
@@ -220,15 +209,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
               onClick={(e) => { e.preventDefault(); scrollToSection('what-i-do'); }}
             >
               What I Do
-            </a>
-          </li>
-          <li>
-            <a
-              href="#approach"
-              className="mobile-nav-link"
-              onClick={(e) => { e.preventDefault(); scrollToSection('approach'); }}
-            >
-              Engineering Approach
             </a>
           </li>
           <li>

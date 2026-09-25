@@ -11,10 +11,8 @@ export const Footer = () => {
       <div className="container">
         <div className="footer-inner">
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-              <div className="brand-monogram" style={{ width: '28px', height: '28px', fontSize: '0.75rem' }}>
-                MTR
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+              <img src="/toufeeq.png" alt="Muhammad Toufeeq Rafique" className="footer-avatar-img" />
               <strong style={{ color: '#ffffff', fontSize: '1rem' }}>{personalInfo.name}</strong>
             </div>
             <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
