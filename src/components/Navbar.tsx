@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
             </div>
             <div className="brand-info">
               <span className="brand-name">{personalInfo.name}</span>
-              <span className="brand-role">Senior .NET / Full Stack</span>
+              <span className="brand-role">Senior .NET / Full Stack Developer</span>
             </div>
           </div>
 

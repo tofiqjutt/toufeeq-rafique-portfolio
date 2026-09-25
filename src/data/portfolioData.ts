@@ -22,7 +22,7 @@ export const personalInfo: PersonalInfo = {
 };
 
 export const heroData = {
-  mainHeadline: 'Senior .NET Developer & Software Engineer',
+  mainHeadline: 'Senior .NET & Fullstack Developer',
   supportingHeadline:
     'Building scalable enterprise applications, financial platforms, APIs, middleware, and integrations.',
   shortIntroduction:

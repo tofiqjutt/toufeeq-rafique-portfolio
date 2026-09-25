@@ -46,7 +46,7 @@ export const CurrentRole: React.FC = () => {
             <Building2 size={14} />
             <span>Active Enterprise Engagement</span>
           </div>
-          <h2 className="section-title">Current Role — Financial Technology Engineering</h2>
+          <h2 className="section-title">Current Role</h2>
           <p className="section-subtitle">
             Leading backend API development, middleware architecture, third-party integrations, and production support for asset management platforms.
           </p>
@@ -98,17 +98,6 @@ export const CurrentRole: React.FC = () => {
                 <Layers size={18} color="var(--accent-cyan)" />
                 <span>AMC Financial Platform Architecture Flow</span>
               </h4>
-              <span style={{ 
-                fontFamily: 'var(--font-mono)', 
-                fontSize: '0.75rem', 
-                color: 'var(--accent-cyan)',
-                background: 'rgba(56, 189, 248, 0.1)',
-                padding: '4px 10px',
-                borderRadius: '4px',
-                border: '1px solid rgba(56, 189, 248, 0.2)'
-              }}>
-                Interactive Topology
-              </span>
             </div>
 
             {/* Architecture Steps (Angular -> .NET Core APIs -> Business Logic -> SQL Server) */}
@@ -124,7 +113,6 @@ export const CurrentRole: React.FC = () => {
                     boxShadow: selectedArchNode === idx ? '0 0 15px rgba(56, 189, 248, 0.2)' : undefined
                   }}
                 >
-                  <span className="arch-step-number">Step 0{idx + 1}</span>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                     {idx === 0 && <Globe size={18} color="var(--accent-cyan)" />}
                     {idx === 1 && <Server size={18} color="var(--accent-cyan)" />}
@@ -172,7 +160,6 @@ export const CurrentRole: React.FC = () => {
 
             {/* External Integrations Connecting to Middleware */}
             <div className="arch-external-integrations">
-              <span className="arch-external-label">External Integrations Connected to Middleware Layer:</span>
               {currentRoleData.hblAmcHighlight.externalIntegrations.map((ext, idx) => (
                 <span key={idx} className="arch-integration-chip">
                   {ext}
