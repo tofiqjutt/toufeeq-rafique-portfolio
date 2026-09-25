@@ -8,7 +8,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 
-export const About: React.FC = () => {
+export const About = () => {
   const getIcon = (name: string) => {
     switch (name) {
       case 'Briefcase': return <Briefcase size={22} />;
@@ -51,9 +51,9 @@ export const About: React.FC = () => {
 
         {/* Narrative & Engineering Pillars */}
         <div className="about-narrative-card">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '36px', alignItems: 'center' }}>
-            <div>
-              <h3 style={{ fontSize: '1.4rem', color: '#ffffff', marginBottom: '16px' }}>
+          <div className="about-narrative-grid">
+            <div className="about-narrative-text">
+              <h3 className="about-headline">
                 Senior Full Stack .NET Developer & Backend Engineer
               </h3>
               <p>
@@ -68,44 +68,32 @@ export const About: React.FC = () => {
             </div>
 
             {/* Core Capability Checklist Box */}
-            <div style={{
-              background: 'rgba(6, 9, 17, 0.7)',
-              border: '1px solid rgba(56, 189, 248, 0.2)',
-              borderRadius: '12px',
-              padding: '24px'
-            }}>
-              <h4 style={{ 
-                fontSize: '0.95rem', 
-                color: 'var(--accent-cyan)', 
-                marginBottom: '16px', 
-                fontFamily: 'var(--font-mono)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
+            <div className="about-competencies-box">
+              <h4 className="about-competencies-title">
                 Core Engineering Competencies
               </h4>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e2e8f0' }}>
+              <ul className="about-competencies-list">
+                <li>
                   <CheckCircle2 size={16} color="var(--accent-cyan)" />
                   <span>ASP.NET Core & C# Backend Services</span>
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e2e8f0' }}>
+                <li>
                   <CheckCircle2 size={16} color="var(--accent-cyan)" />
                   <span>REST & SOAP API Integrations</span>
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e2e8f0' }}>
+                <li>
                   <CheckCircle2 size={16} color="var(--accent-cyan)" />
                   <span>Financial Middleware & JWT Security</span>
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e2e8f0' }}>
+                <li>
                   <CheckCircle2 size={16} color="var(--accent-cyan)" />
                   <span>SQL Server & Stored Procedures Tuning</span>
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e2e8f0' }}>
+                <li>
                   <CheckCircle2 size={16} color="var(--accent-cyan)" />
                   <span>Production Troubleshooting & IIS Deployments</span>
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e2e8f0' }}>
+                <li>
                   <CheckCircle2 size={16} color="var(--accent-cyan)" />
                   <span>End-to-End Enterprise SDLC Delivery</span>
                 </li>
